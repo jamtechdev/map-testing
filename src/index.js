@@ -28,8 +28,8 @@ function main() {
 function setupStage() {
     masterContainer = document.createElement('div')
     masterContainer.setAttribute("id", 'render_map2')
-    masterContainer.style.width = osdWidth + "px"
-    masterContainer.style.height = osdHeight + "px"
+    masterContainer.style.width = sWidth + "px"
+    masterContainer.style.height = sHeight + "px"
     document.getElementById("app").appendChild(masterContainer);
     return true
 }
@@ -53,7 +53,7 @@ function setupOSDContainer() {
         tileSources:duomo,
         prefixUrl: "//openseadragon.github.io/openseadragon/images/",
         showNavigationControl: false,
-        homeFillsViewer:false,
+        homeFillsViewer:true,
         visibilityRatio: 1,
         animationTime: 1.0,
         blendTime: 1,

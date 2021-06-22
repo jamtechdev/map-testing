@@ -81,13 +81,12 @@ export function getDragonPoint() {
 }
 
 export function setTransformationLevel(zoomLevel, x, y) {
-  //console.log(dThree.select())
-let point = snapDragon.getMousePosition({ pageX: x, pageY: y });
 // console.log(point)
-// var vp = _viewer.viewport.windowToViewportCoordinates(point);
-// var box = new snapDragon.Rect(vp.x - size / 2, vp.y - size / 2, size, size); 
-// _viewer.viewport.fitBounds(box);
-// _viewer.viewport.applyConstraints();
+let point = snapDragon.getMousePosition({ pageX: x, pageY: y });
+let vp = _viewer.viewport.windowToViewportCoordinates(point);
+let box = new snapDragon.Rect(vp.x - size / 2, vp.y - size / 2, size, size); 
+_viewer.viewport.fitBounds(box);
+_viewer.viewport.applyConstraints();
 
 
 // var viewportPoint = _viewer.viewport.pointFromPixel(point);
@@ -183,23 +182,23 @@ let point = snapDragon.getMousePosition({ pageX: x, pageY: y });
 // });
 
 //document.dispatchEvent(event);
-  _viewer.raiseEvent('canvas-click',{
-    eventSource:_viewer,
-    position:point,
-    quick:true,
-    shift:false,
-    preventDefaultAction:false, 
-    originalEvent: new PointerEvent('pointerup',{
-      clientX:point.x,
-      clientY:point.y,
-      screenX:point.x,
-      screenY:point.y,
-      view:window,
-      pointerType:'mouse',
-      pointerId:1
-    })
+//   _viewer.raiseEvent('canvas-click',{
+//     eventSource:_viewer,
+//     position:point,
+//     quick:true,
+//     shift:false,
+//     preventDefaultAction:false, 
+//     originalEvent: new PointerEvent('pointerup',{
+//       clientX:point.x,
+//       clientY:point.y,
+//       screenX:point.x,
+//       screenY:point.y,
+//       view:window,
+//       pointerType:'mouse',
+//       pointerId:1
+//     })
 
-})
+// })
 
   // document.getElementById('render_map2').dispatchEvent(new CustomEvent('canvas-click', { 'bubbles': true }))
   //    let point = snapDragon.getMousePosition({ pageX: x, pageY: y });

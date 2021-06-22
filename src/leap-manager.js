@@ -203,7 +203,6 @@ function drawCursor(points) {
   }
   prevX = x;
   prevY = y;
-  // console.log(x,y)
   svgNode.select("#gifLoaderImg").attr("x", x).attr("y", y);
   svgNode.select("#leapPointer").attr("x", x).attr("y", y);
   if (getScale() > 1) {
