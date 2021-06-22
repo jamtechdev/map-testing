@@ -1,0 +1,35 @@
+{
+  "name": "skymap-es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js && webpack server",
+    "start": "webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.2.4",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "node-loader": "^2.0.0",
+    "raw-loader": "^4.0.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "d3": "^6.7.0",
+    "jquery": "^3.6.0",
+    "leapjs": "^1.1.0",
+    "openseadragon": "^2.4.2"
+  }
+}

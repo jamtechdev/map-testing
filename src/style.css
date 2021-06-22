@@ -1,0 +1,134 @@
+html,body{
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: 400;
+    line-height: 1.5;
+}
+#app{
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+#render_map2 {
+    background-color: black;
+    overflow: hidden;
+    margin: 0;
+    
+    
+  }
+  #cursor{
+    height:40px;
+    width: 40px;
+    position: absolute;
+   
+    } 
+  /* The Modal (background) */
+	.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    background-color: #000!important;
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: #000!important;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .lightBoxModelSlides {
+    display: none;
+  }
+  img {
+    margin-bottom: -4px;
+  }
+  
+  .caption-container {
+    text-align: center;
+    background-color: rgb(24, 24, 24,50%);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+  }
+  span{
+font-size: 12px;
+font-weight: bold;
+  }
+  .caption-container h2{
+    font-size: 100%;
+  }
+  .caption-container p{
+    font-size: 100%;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    padding-bottom: 15px;
+    /* display: inline-block; */
+  }
+  @media screen and (min-width: 1600px) {
+  
+  .caption-container h2{
+    font-size: 70px;
+  }
+  .caption-container p{
+    font-size:45px;
+  }
+  }
+#lightBoxImage{
+ width: 100%;
+}
+.top_section {
+  text-align: left;
+  margin: 10px 10px 0px;
+  cursor: pointer;
+}
+
+#checkbox_hide_info{
+	display: none;
+  cursor: pointer;
+}
+.hide_info_label::after {
+  display: block;
+}
+
+.show_info_label {
+
+  display: none;
+}
+
+#checkbox_hide_info:checked ~ * .hide_info_label {
+  display: none;
+}
+
+#checkbox_hide_info:checked ~ * .show_info_label {
+  display: inline-block;
+}
+.tab-content {
+  /* max-height: 50vh; */
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  text-align: center;
+}
+#checkbox_hide_info:checked ~ .tab-content {
+  max-height: 0;
+  top: 50px;
+  position: relative;
+}
