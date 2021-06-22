@@ -42,10 +42,10 @@ function setupOSDContainer() {
           Format: "jpg",
           Overlap: "2",
           TileSize: "256",
-            // There are my image size Width: 16384, Height: 8192
+            //Sir here I replace your image size with my
           Size: {
-            Width:  "13920",
-            Height: "10200"
+            Width:  "16384",
+            Height: "8192"
           }
         }
       };

@@ -81,13 +81,21 @@ export function getDragonPoint() {
 }
 
 export function setTransformationLevel(zoomLevel, x, y) {
-// console.log(point)
+console.log(x,y)
 let point = snapDragon.getMousePosition({ pageX: x, pageY: y });
 let vp = _viewer.viewport.windowToViewportCoordinates(point);
 let box = new snapDragon.Rect(vp.x - size / 2, vp.y - size / 2, size, size); 
 _viewer.viewport.fitBounds(box);
 _viewer.viewport.applyConstraints();
 
+//For random click test
+// let points=[
+//   [415,286],
+//   [579,292],
+//   [662,215],
+//   [680,250],
+//   [704,262]
+// ];
 
 // var viewportPoint = _viewer.viewport.pointFromPixel(point);
 // var vp= _viewer.viewport.windowToViewportCoordinates(viewportPoint);

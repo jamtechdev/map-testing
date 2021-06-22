@@ -522,5 +522,31 @@
         "Longitude": -8.792562,
         "Latitude": -23.271645,
         "Category": "ST"
+    },
+    {
+        "Code_id": "B0814",
+        "WISE Objects": "Jum will",
+        "L": 241.211993,
+        "B": -35.901597,
+        "Longitude": 118.788007,
+        "Latitude": -35.901597,
+        "Category": "G"
+    },  {
+        "Caldwell_Messier": "B0304",
+        "WISE Objects": "Fornax",
+        "L": 240.162725,
+        "B": -56.689848,
+        "Longitude": 119.837275,
+        "Latitude": -56.689848,
+        "Category": "G"
+    },
+    {
+        "Caldwell_Messier": "C067",
+        "WISE Objects": "Rock C67",
+        "L": 226.914732,
+        "B": -64.680544,
+        "Longitude": 133.085268,
+        "Latitude": -64.680544,
+        "Category": "G"
     }
 ]
