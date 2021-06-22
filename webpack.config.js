@@ -44,7 +44,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
       },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Night Sky - The Sky Map',
+        title: 'Image map',
         inject: true,
         hash: true,
         template: './src/index.html',
