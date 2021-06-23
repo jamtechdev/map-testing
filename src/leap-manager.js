@@ -74,7 +74,7 @@ export function connectWithLeapDevice(svg) {
           //If any gesture exist I use it for normal zoom IN/OUT on circular gesture
           if (getExtendedFingersCount(hand) < MAX_FINGERS) {
               if (frame.data.gestures.length) {
-              if (frame.data.gestures[0].type != "circle") return;
+             // if (frame.data.gestures[0].type != "circle" || frame.data.gestures[0].type != "keyTap") return;
               gestureHandler(frame.data.gestures, frame);
             }
              /*@iangilman :
@@ -106,6 +106,15 @@ export function connectWithLeapDevice(svg) {
     }
   });
   controller.setBackground(true);
+  //geneate random screen coordinates
+  // setInterval(()=>{
+  //   var x = (Math.random() * ((osdWidth) - parseFloat(d3.select('#leapPointer').attr('width')))).toFixed();
+  //   var y = (Math.random() * ((osdHeight) - parseFloat(d3.select('#leapPointer').attr('width')) )).toFixed();
+  //   let point = [x,y]
+  //   console.log(point)
+  //   drawCursor(point)
+  //   selectObject(point)
+  // },2500)
 }
 
 function gestureHandler(gestures, frame) {
@@ -133,6 +142,9 @@ function gestureHandler(gestures, frame) {
           }
         }
         break;
+        case "keyTap":
+          console.log("Key Tap Gesture",gesture);
+          break;  
     }
     return;
   });
@@ -149,6 +161,8 @@ function selectObject(points) {
   let radius = 10
   let scrCoords = getCursorInsideViewPort(points[0], points[1]);
   let [x, y] = [scrCoords.x, scrCoords.y];
+  //comment line 159,160 and then uncomment line 162 for random point check
+//let [x,y] = [points[0],points[1]]
   prevX = x;
   prevY = y;
   let hoveredObject;
@@ -196,6 +210,8 @@ function drawCursor(points) {
    */
   let scrCoords = getCursorInsideViewPort(points[0], points[1]);
   let [x, y] = [scrCoords.x, scrCoords.y];
+  //comment line 207,208 and then uncomment line 210 for random point check
+ //let [x,y] = [ points[0], points[1]]
   if (sWidth - x === 0 || sHeight - y === 0) {
     //Here I minus some value form x,y coords for maintaining cursor in viewport
     x -= 5;

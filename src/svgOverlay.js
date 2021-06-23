@@ -1,3 +1,5 @@
+import { osdHeight, osdWidth } from "./constants";
+
 let _node;
 let _viewer;
 let _containerWidth = 0;
@@ -79,14 +81,24 @@ export function getZoom() {
 export function getDragonPoint() {
   return _viewer.viewport.pixelFromPoint(new snapDragon.Point(0, 0), true);
 }
-
+// const scaleCoordinates = (width, height, x, y, scale) =>{
+// 	const centerX = width/2;
+//   const centerY = height/2;
+//  	const relX = x - centerX;
+//   const relY = y - centerY;
+//   const scaledX = relX * scale;
+//   const scaledY= relY * scale;
+//   return {x: scaledX + centerX, y: scaledY + centerY};
+  //}
 export function setTransformationLevel(zoomLevel, x, y) {
-console.log(x,y)
-let point = snapDragon.getMousePosition({ pageX: x, pageY: y });
+
+//let cords = scaleCoordinates(osdWidth,osdHeight,x,y,getScale())
+let point = snapDragon.getMousePosition({ pageX:x, pageY:y});
 let vp = _viewer.viewport.windowToViewportCoordinates(point);
 let box = new snapDragon.Rect(vp.x - size / 2, vp.y - size / 2, size, size); 
 _viewer.viewport.fitBounds(box);
 _viewer.viewport.applyConstraints();
+console.log("Object Clicked at point", x,y)
 
 //For random click test
 // let points=[

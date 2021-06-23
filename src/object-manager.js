@@ -56,6 +56,10 @@ export function drawObjectsOnMap(d3, svg, xScale, yScale, size) {
           break;
         case "C":
           shape = java;
+          case "N":
+          shape = node;
+          case "P":
+          shape = angular;
           break;
    
       }
