@@ -18,7 +18,6 @@ import {
   getCurrentSelected,
   changeSize
 } from "./object-manager";
-import { lightBoxWatcher } from "./watchers";
 let controller = null;
 let hand = undefined;
 let options = { enableGestures: true, frameEventName: "deviceFrame" };
@@ -74,7 +73,7 @@ export function connectWithLeapDevice(svg) {
           //If any gesture exist I use it for normal zoom IN/OUT on circular gesture
           if (getExtendedFingersCount(hand) < MAX_FINGERS) {
               if (frame.data.gestures.length) {
-             // if (frame.data.gestures[0].type != "circle" || frame.data.gestures[0].type != "keyTap") return;
+             if (frame.data.gestures[0].type != "circle") return;
               gestureHandler(frame.data.gestures, frame);
             }
              /*@iangilman :
@@ -142,9 +141,9 @@ function gestureHandler(gestures, frame) {
           }
         }
         break;
-        case "keyTap":
-          console.log("Key Tap Gesture",gesture);
-          break;  
+        // case "keyTap":
+        //   console.log("Key Tap Gesture",gesture);
+        //   break;  
     }
     return;
   });
